@@ -1,6 +1,7 @@
 import React from 'react';
-import { StyleSheet, View, StatusBar, Text } from 'react-native';
-import Nav from './components/Nav'
+import {StyleSheet, View, StatusBar, Text} from 'react-native';
+import LayoutHeader from './components/layout/LayoutHeader';
+import LayoutFooter from './components/layout/LayoutFooter';
 import {
   Container,
   Header,
@@ -19,30 +20,17 @@ import {
 } from 'native-base';
 
 export default class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props)
     this.state = {
       hidden: false
     }
   }
+
   render() {
     return (
       <Container style={styles.container}>
-        <Header style={{height:50}}>
-          <Left>
-            <Button transparent>
-              <Icon name='ios-arrow-back-outline' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Activity</Title>
-          </Body>
-          <Right>
-            <Button transparent>
-              <Icon name='ios-cart' />
-            </Button>
-          </Right>
-        </Header>
+        <LayoutHeader />
 
         <Content style={{flex:1}}>
           <List>
@@ -60,34 +48,34 @@ export default class App extends React.Component {
             </ListItem>
 
             <ListItem >
-                          <Text>Simon Mignolet</Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>Nathaniel Clyne</Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>Dejan Lovren</Text>
-                        </ListItem>
-                        <ListItem>
-                          <Text>Dejan Lovren</Text>
-                        </ListItem>
+              <Text>Simon Mignolet</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Nathaniel Clyne</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Dejan Lovren</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Dejan Lovren</Text>
+            </ListItem>
 
-                        <ListItem >
-                                      <Text>Simon Mignolet</Text>
-                                    </ListItem>
-                                    <ListItem>
-                                      <Text>Nathaniel Clyne</Text>
-                                    </ListItem>
-                                    <ListItem>
-                                      <Text>Dejan Lovren</Text>
-                                    </ListItem>
-                                    <ListItem>
-                                      <Text>Dejan Lovren</Text>
-                                    </ListItem>
+            <ListItem >
+              <Text>Simon Mignolet</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Nathaniel Clyne</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Dejan Lovren</Text>
+            </ListItem>
+            <ListItem>
+              <Text>Dejan Lovren</Text>
+            </ListItem>
           </List>
         </Content>
 
-        <Nav style={{height: 50}}></Nav>
+        <LayoutFooter />
       </Container>
     );
   }
